@@ -6,7 +6,7 @@ pipeline {
         // Jenkins에 등록된 Maven 사용
     }
 
-    enviroment {
+    environment {
         // 배포에 필요한 변수 설정
         DOCKER_IMAGE = "demo-app" // 도커 이미지 이름
         CONTAINER_NAME = "springboot-container" // 도커 컨테이너 이름
@@ -21,7 +21,7 @@ pipeline {
     // 여러 단계를 그룹화
     stages {
         stage('Git checkout') {
-            step { // step : stage 안에서 실행할 실제 명령어
+            steps { // step : stage 안에서 실행할 실제 명령어
                 // Jenkins가 연결된 git 저장소에서 최신 코드 체크아웃
                 checkout scm
             }
